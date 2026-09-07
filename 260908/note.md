@@ -50,7 +50,7 @@ xychart
 ![](h8_env_1.gif)
 ![](h8_env_4.gif)
 
-#### **Failure Examples** \
+#### **Failure Examples**
 
 **1. ActionBlock = 5, horizon = 5** \
 ![](h5_env_48.gif)
