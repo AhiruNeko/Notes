@@ -11,7 +11,7 @@
 
 #### **Key Parameters:** 
 
-| frameskip (action block) | action input embed_dim | horizon | receding horizon | Solver |
+| frameskip (action block) | action input dim | horizon | receding horizon | Solver |
 |-------|--------|-------|-------|----|
 | 5 (default) | 10 (default) | 3 | 3 | CEM (default) |
 | 5 (default) | 10 (default) | 4 | 4 | CEM (default) |
