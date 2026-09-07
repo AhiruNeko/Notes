@@ -43,25 +43,25 @@ xychart
 
 #### **Success Examples**
 
-**1. ActionBlock = 5, horizon = 5**
+**1. ActionBlock = 5, horizon = 5** \
 ![](h5_env_24.gif)
 
-**2. ActionBlock = 5, horizon = 8**
+**2. ActionBlock = 5, horizon = 8** \
 ![](h8_env_1.gif)
 ![](h8_env_4.gif)
 
-#### **Failure Examples**
+#### **Failure Examples** \
 
-**1. ActionBlock = 5, horizon = 5**
+**1. ActionBlock = 5, horizon = 5** \
 ![](h5_env_48.gif)
 
-**2. ActionBlock = 5, horizon = 8**
+**2. ActionBlock = 5, horizon = 8** \
 ![](h8_env_45.gif)
 ![](h8_env_46.gif)
 ![](h8_env_49.gif)
 
 
-**3. ActionBlock = 40, horizon = 1**
+**3. ActionBlock = 40, horizon = 1** \
 ![](ab40_env_38.gif)
 ![](ab40_env_39.gif)
 ![](ab40_env_47.gif)
