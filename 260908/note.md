@@ -67,13 +67,19 @@ xychart
 ![](ab40_env_47.gif)
 
 #### **Analysis**
+
 **1. 误差累积导致大horizon效果差**
+
 **2. horizon大，CEM采样空间大**
+
 **3. 原LeWM改大action block效果不佳**
 
 #### **Features**
+
 **1. 未必得到最优解**
+
 **2. long-horizon planning前期模型易迷茫，在起点周围探索**
+
 **3. 有正确趋势**
 
 ## Papers
