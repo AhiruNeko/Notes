@@ -44,27 +44,27 @@ xychart
 #### **Success Examples**
 
 **1. ActionBlock = 5, horizon = 5**
-<video src="h5_env_24.mp4" controls width="600"></video>
+![](h5_env_24.gif)
 
 **2. ActionBlock = 5, horizon = 8**
-<video src="h8_env_1.mp4" controls width="600"></video>
-<video src="h8_env_4.mp4" controls width="600"></video>
+![](h8_env_1.gif)
+![](h8_env_4.gif)
 
 #### **Failure Examples**
 
 **1. ActionBlock = 5, horizon = 5**
-<video src="h5_env_48.mp4" controls width="600"></video>
+![](h5_env_48.gif)
 
 **2. ActionBlock = 5, horizon = 8**
-<video src="h8_env_45.mp4" controls width="600"></video>
-<video src="h8_env_46.mp4" controls width="600"></video>
-<video src="h8_env_49.mp4" controls width="600"></video>
+![](h8_env_45.gif)
+![](h8_env_46.gif)
+![](h8_env_49.gif)
 
 
 **3. ActionBlock = 40, horizon = 1**
-<video src="ab40_env_38.mp4" controls width="600"></video>
-<video src="ab40_env_39.mp4" controls width="600"></video>
-<video src="ab40_env_47.mp4" controls width="600"></video>
+![](ab40_env_38.gif)
+![](ab40_env_39.gif)
+![](ab40_env_47.gif)
 
 #### **Analysis**
 **1. 误差累积导致大horizon效果差**
