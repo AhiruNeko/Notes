@@ -39,6 +39,10 @@ xychart
 | 40 | 80 | 1 | 1 | CEM (default) | 0.04 |
 | 5 (default) | 10 (default) | 8 | 8 | CEM (default) | 0.60 |
 
+#### **Training**
+
+[wandb](https://wandb.ai/ahiruneko47-hong-kong-baptist-university/LeWorldModel/runs/7gl5ycgv?nw=nwuserahiruneko47)
+
 ### 3. Examples
 
 #### **Success Examples**
