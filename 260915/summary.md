@@ -75,7 +75,7 @@ LeFlow Planner (transformer + flow matching) + experience cross-attention + scor
 #### **3. Complete architecture**
 
 ```
-def planner(O_0, O_g, N, K, plan_max)
+def plan(O_0, O_g, N, K, plan_max)
     # ---------- input ----------
     # O_0 : current observation
     # O_g : goal observation
