@@ -1,0 +1,118 @@
+\begin{tikzpicture}
+  \fill[yellow!97!pink!15] (-6,6) rectangle (19.13,-3.54);
+  \fill[cyan!86!lime!16] (-6,-3.51) rectangle (19.13,-10.39);
+  \fill[green!95!red!12] (-6,-10.31) rectangle (19.15,-17.19);
+  \fill[dashed, rounded corners, lightgray] (-5.5,4.2) rectangle (5,-2.73);
+  \node[draw, node font=\bfseries] at (-2.77,5) {Step 1 - Traj-Enc & Comparator};
+  \node[draw, node font=\bfseries] at (-2.68,-4.25) {Step 2 - Lantent Flow Planner};
+  \node[draw, node font=\bfseries] at (-3.6,-10.98) {Step 3 - Fine-Tuning};
+  \node[draw=none, align=left, minimum width=84pt, rounded corners] at (-3.9,2.7) {$\tau^+=(z_0, z_g, \tau)$ \\ $\tau^-=(z_0,z_g',\tau)$};
+  \node[draw=none, align=left, minimum width=84pt, rounded corners] at (-3.87,-1.91) {$\tau^+=(z_0, z_g, \tau)$ \\ $\tau^-=(z_0,z_g,\hat{\tau})$};
+  \node[draw=none, align=left, minimum width=190pt, text=black, rounded corners] at (-2.3,0.5) {$\tau_A=(z_0, z_1+\epsilon_1^{(p)}, ..., z_{g-1}+\epsilon_{g-1}^{(p)}, z_g)$ \\ $\tau_B=(z_0,z_1+\epsilon_1^{(q)},...,z_{g-1}+\epsilon_{g-1}^{(q)},z_g)$};
+  \draw[arrows=-Latex] (-2.33,2.7) -- (-1.92,2.7);
+  \node[draw=none] at (-0.8,2.7) {$P(\tau>\tau^-)=1$};
+  \draw[arrows=-Latex] (1.08,0.5) -- (1.49,0.5);
+  \node[draw=none] at (2.94,0.5) {$P(\tau_A>\tau_B)=\frac{q}{p+q}$};
+  \node[draw=none, node font=\itshape] at (-0.62,-3.08) {Dataset};
+  \node[draw=none, node font=\itshape] at (-2.21,3.55) {Expert v.s. Goal-Mismatch Data $\times$ N};
+  \node[draw=none, node font=\itshape] at (-3.76,1.38) {Noised Data $\times$ M};
+  \draw[arrows=-Latex] (5,2.35) -- (5.5,2.35);
+  \draw[arrows=-Latex] (5,0.05) -- (5.5,0.05);
+  \node[draw=none] (node1) at (5.71,2.35) {$\tau_A$};
+  \node[draw=none] (node3) at (5.71,1.21) {$z_g$};
+  \node[draw=none] (node2) at (5.7,0.04) {$\tau_B$};
+  \draw[arrows=-Latex] (node1.east) -- (6.5,2.35);
+  \draw[arrows=-Latex] (node2.east) -- (6.5,0.04);
+  \node[draw=cyan, rounded corners, fill=cyan, minimum width=47pt, minimum height=33pt] (node4) at (7.33,0.33) {Traj-Enc};
+  \node[draw=cyan, rounded corners, fill=cyan, minimum width=47pt] (node17) at (-1.6,-6.9) {Traj-Enc};
+  \node[draw=cyan, rounded corners, fill=cyan, minimum width=61pt] (node27) at (0.9,-13.2) {Traj-Enc};
+  \node[draw=cyan, rounded corners, fill=cyan, minimum width=47pt, minimum height=33pt] (node5) at (7.33,2.08) {Traj-Enc};
+  \draw[arrows=-Latex] (5,1.28) -- (5.51,1.28);
+  \draw[arrows=-Latex] (node3.north) -- (5.71,1.83) -- (6.5,1.83);
+  \draw[arrows=-Latex] (node3.south) -- (5.71,0.62) -- (6.5,0.61);
+  \draw[arrows=-Latex] (node5.east) -- (8.6,2.08);
+  \draw[arrows=-Latex] (node4.east) -- (8.6,0.33);
+  \node[draw=pink, rounded corners, fill=pink, minimum height=79pt] (node8) at (10.6,1.18) {Comparator};
+  \node[draw=pink, rounded corners, fill=pink, minimum height=17pt] (node28) at (0.9,-12.25) {Comparator};
+  \node[draw=none] (node6) at (8.93,2.08) {$T_A$};
+  \node[draw=none] (node7) at (8.93,0.32) {$T_B$};
+  \draw[arrows=-Latex] (node6.east) -- (9.56,2.08);
+  \draw[arrows=-Latex] (node7.east) -- (9.56,0.32);
+  \draw[arrows=-Latex] (node8.east) -- (12,1.18);
+  \node[draw=none] at (13.58,1.18) {$\hat{p}=P(\tau_A>\tau_B | z_g)$};
+  \draw[arrows=-Latex] (5,-0.89) -- (5.5,-0.89);
+  \node[draw=none] (node9) at (5.71,-0.89) {$p$};
+  \draw[dashed] (-5.12,1.93) -- (4.63,1.93);
+  \draw[arrows=-Latex] (-2.51,-1.91) -- (-2.1,-1.91);
+  \node[draw=none] at (-0.58,-1.96) {$P(\tau^+>\tau^-)=\frac{q}{p+q}$};
+  \node[draw=none, node font=\itshape] at (-2.74,-1) {Failures without memory $\times$ K};
+  \draw[dashed] (-5.07,-0.47) -- (4.68,-0.47);
+  \draw (node9.east) -- (15.5,-0.89) -- (15.5,1.18) -- (14.98,1.18);
+  \draw[arrows=-Latex] (15.49,0.13) -- (15.8,0.13);
+  \node[draw=none] (node10) at (17.28,0.13) {$\mathcal{L}_{comp}=\mathbb{E}[(\hat{p}-p)^2]$};
+  \draw[arrows=Latex-] (node5.north) -- (7.33,3.4) -- (17.28,3.41) .. controls (17.28,2.41) and (17.28,1.38) .. (node10.north);
+  \draw[arrows=-Latex] (10.6,3.4) -- (node8.north);
+  \node[draw=none] at (16.58,2.06) {$\nabla\mathcal{L}_{comp}$};
+  \node[draw=none] at (4.34,-9.85) {$\nabla\mathcal{L_planner}$};
+  \node[draw=none] at (6.5,-14.13) {$\nabla\mathcal{L}_{planner}$};
+  \node[draw=none] at (2.78,-16.58) {$\nabla\mathcal{L}_{planner}$};
+  \node[draw=none] (node13) at (-4.5,-8.79) {$z_0, \epsilon_1, ..., z_g$};
+  \node[draw=pink, fill=pink, rounded corners, minimum width=83pt] (node12) at (-1.56,-8.79) {Planner};
+  \draw[arrows=-Latex] (node12.east) -- (0.33,-8.79);
+  \node[draw=none] (node14) at (0.5,-8.79) {$v$};
+  \draw[arrows=-Latex] (node14.east) -- (3,-8.79);
+  \node[draw=none, node font=\footnotesize\itshape] at (1.8,-8.58) {Flow Matching};
+  \node[draw=none] (node15) at (4.4,-8.78) {$\hat{\tau}_i=(z_0, z_1, ..., z_g)$};
+  \node[draw=none] (node26) at (1.71,-14.88) {$\hat{\tau}=(z_0, z_1, ..., z_g)$};
+  \node[draw=lightgray, rounded corners, fill=lightgray, minimum width=58pt] (node16) at (-1.6,-5.05) {Dataset};
+  \node[draw=lightgray, rounded corners, fill=lightgray] (node25) at (-4.55,-15.86) {Dataset};
+  \node[draw=none] (node18) at (-1.6,-5.95) {$\tau_0, \tau_1, ..., \tau_N$};
+  \draw[arrows=-Latex] (node16.south) -- (node18.north);
+  \draw[arrows=-Latex] (node18.south) -- (node17.north);
+  \node[draw=none] (node19) at (0.33,-5.05) {$\tau_i$};
+  \draw[arrows=-Latex] (node16.east) -- (node19.west);
+  \draw (node19.east) -- (6.12,-5.04) -- (6.14,-8.78) .. controls (6.07,-8.78) and (5.95,-8.78) .. (node15.east);
+  \node[draw=none] (node20) at (9.6,-6.9) {$\mathcal{L}_{planner}=\mathbb{E}[\|\hat{\tau_i}-\tau_i\|^2_2+\lambda_{exp}(1-e^{-N})]$};
+  \node[draw=none] (node31) at (7.37,-15.35) {$\mathcal{L}_{planner}=\mathbb{E}[\|\hat{\tau_i}-\tau_i\|^2_2+\lambda_{exp}(1-e^{-N})]$};
+  \draw[arrows=-Latex] (6.13,-6.9) -- (6.5,-6.9);
+  \draw[arrows=-Latex] (node20.south) -- (9.6,-9.56) -- (-1.56,-9.6) -- (node12.south);
+  \matrix [matrix of nodes, fill=lime] (node21) at (-1.6,-7.79) {
+  $T_0$ & $T_1$ & ... & $T_N$ \\
+};
+  \matrix [matrix of nodes, fill=lime] (node22) at (-1.61,-13.85) {
+    $T_0$ & $T_1$ & ... & $T_N$ \\
+  };
+  \draw[arrows=-Latex] (-1.56,-8.09) -- (node12.north);
+  \draw[arrows=-Latex] (node17.south) -- (node21-1-2.north east);
+  \node[draw=none, node font=\footnotesize\itshape] at (-0.75,-8.31) {Experience};
+  \draw[arrows=-Latex] (node13.east) -- (node12.west);
+  \node[draw=none] (node23) at (-4.55,-14.9) {$z_0, z_g$};
+  \node[draw=pink, fill=pink, rounded corners, minimum width=83pt] (node24) at (-1.61,-14.9) {Planner};
+  \draw[arrows=-Latex] (node24.east) -- (0.28,-14.9);
+  \draw[arrows=-Latex] (node23.east) -- (node24.west);
+  \node[draw=none] (node11) at (-4.5,-5.95) {$(z_0, z_g)$};
+  \draw[arrows=-Latex] (node16.west) -- (-4.5,-5.05) -- (node11.north);
+  \draw[arrows=-Latex] (node11.south) -- (node13.north);
+  \draw[arrows=-Latex] (node22.south) -- (node24.north);
+
+  \draw[arrows=-Latex] (node25.north) -- (node23.south);
+  \draw[arrows=-Latex] (node26.north) -- (1.71,-13.45);
+
+  \draw[arrows=-Latex] (node22.east) -- (0.13,-13.85) -- (0.13,-13.45);
+  \draw[arrows=-Latex] (node27.north) -- (node28.south);
+
+  \draw[arrows=-Latex] (node28.west) -- (-1.61,-12.25) -- (node22.north);
+  \node[draw=none, node font=\footnotesize\itshape, align=center] at (-2.42,-12.93) {Experience\\Update};
+  \node[draw=none] (node29) at (0.9,-14.25) {$z_g$};
+  \draw[arrows=-Latex] (node29.north) -- (node27.south);
+  \node[draw=none] (node30) at (0.5,-15.86) {$\tau$};
+  \draw[arrows=-Latex] (node25.east) -- (node30.west);
+
+  \draw (node30.east) -- (3.5,-15.86) -- (3.5,-14.88) -- (node26.east);
+  \draw[arrows=-Latex] (3.5,-15.35) -- (node31.west);
+
+  \draw[arrows=-Latex, dashed] (node31.north) -- (7.37,-12.25) -- (node28.east);
+  \draw[arrows=-Latex, dashed] (7.37,-13.2) -- (node27.east);
+
+  \draw[arrows=-Latex] (node31.south) -- (7.37,-16.25) -- (-1.61,-16.25) .. controls (-1.61,-15.86) and (-1.61,-15.51) .. (node24.south);
+\end{tikzpicture}

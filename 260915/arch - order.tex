@@ -1,0 +1,121 @@
+\begin{tikzpicture}
+  \draw[fill=green!99!lime!21, draw=none] (-4.3,0.34) rectangle (12.13,-4.68);
+  \draw[fill=cyan!89!magenta!24, draw=none] (-4.29,-4.62) rectangle (12.14,-13.21);
+  \draw[fill=yellow!99!green!21, draw=none] (-4.29,4.42) rectangle (12.1,0.34);
+  \draw[pink, semithick] (-0.14,-2.12) -- (0.81,-1.49);
+  \draw[pink, semithick] (1.3,-2.76) -- (1.71,-3.39);
+  \draw[pink, semithick] (0.79,-3.39) -- (1.3,-2.76);
+  \draw[pink, semithick] (1.79,-2.12) -- (2.2,-2.75);
+  \draw[semithick, black] (1.28,-2.75) -- (1.79,-2.12);
+  \draw[semithick, black] (1.74,-2.12) -- (0.81,-1.49);
+  \node[draw=none, shape=rectangle, minimum height=10pt] (node1) at (-2.81,2.56) {$z_0, \epsilon_1, \epsilon_2, ..., z_g$};
+  \node[draw=none] (node4) at (6.09,2.57) {$v$};
+  \matrix [matrix of nodes, draw=none, fill=none] at (1.06,3.84) {
+    $z_0$ & $\epsilon_1$ & $\epsilon_1$ & $...$ & $z_g$
+};
+  \matrix [matrix of nodes, draw=none, fill=none] (node3) at (3.56,3.86) {
+  $T_0$ & $T_1$ & $...$ & $T_N$ \\
+};
+  \matrix [matrix of nodes, draw=lime, fill=lime] (node21) at (1,-5.75) {
+    $T_0$ & $T_1$ & $...$ & $T_N$ \\
+  };
+  \matrix [matrix of nodes, draw=none, fill=none] (node2) at (-0.51,2.49) {
+  $z_0$ \\
+  $\epsilon_1$ \\
+  $\epsilon_2$ \\
+  $\vdots$ \\
+  $z_g$ \\
+};
+  \draw[cyan, fill=cyan, rounded corners] (-0.21,3.56) rectangle (2.23,1.48);
+  \draw[fill=cyan, rounded corners, pink] (2.44,3.56) rectangle (4.67,1.48);
+  \node[draw=none, node font=\footnotesize\itshape] (node11) at (1.01,2.53) {Self-Attention};
+  \draw[arrows=-Latex] (node1.east) -- (-0.93,2.56);
+  \node[draw=none, node font=\footnotesize\itshape] at (3.56,2.54) {Cross-Attention};
+  \draw[arrows=-Latex] (4.92,2.56) -- (5.83,2.56);
+  \draw[arrows=-Latex] (node4.east) -- (8.29,2.57);
+  \node[draw=none, node font=\scriptsize\itshape] at (7.27,2.71) {Flow Matching};
+  \node[draw, node font=\bfseries, rounded corners, semithick] at (2.23,1) {Latent Flow Planner};
+  \node[draw, node font=\bfseries, rounded corners, semithick] at (2.18,-4.17) {Experience Update};
+  \node[draw, node font=\bfseries, rounded corners, semithick] at (9.3,-6.82) {Complete Architecture};
+  \node[draw=none] at (9.22,2.57) {$z_0, z_1, ..., z_g$};
+  \node[draw=none] (node5) at (-3,-0.51) {$z_0, z_1, ..., z_g $};
+  \draw[arrows=-Latex] (node5.east) -- (0,-0.51);
+  \node[draw=teal, fill=teal, rounded corners] (node6) at (0.84,-0.51) {Traj-Enc};
+  \node[draw=none] (node7) at (3.56,-0.51) {$T_i$};
+  \draw[arrows=-Latex] (node6.east) -- (node7.west);
+  \draw[fill=pink] (0.81,-1.49) circle (0.25cm);
+  \draw[fill=pink] (1.8,-2.12) circle (0.25cm);
+  \draw[pink, fill=pink] (-0.14,-2.12) circle (0.25cm);
+  \draw[pink, fill=pink] (-0.63,-2.75) circle (0.25cm);
+  \draw[pink, fill=pink] (0.28,-2.75) circle (0.25cm);
+  \draw[pink, semithick] (-0.64,-2.75) -- (-0.13,-2.12);
+  \draw[pink, semithick] (-0.13,-2.12) -- (0.28,-2.75);
+  \draw[fill=pink] (1.29,-2.75) circle (0.25cm);
+  \draw[pink, fill=pink] (2.2,-2.75) circle (0.25cm);
+  \draw[pink, fill=pink] (0.8,-3.39) circle (0.25cm);
+  \draw[pink, fill=pink] (1.71,-3.39) circle (0.25cm);
+  \node[draw=none, node font=\scriptsize] at (1.3,-2.76) {$T_j$};
+  \node[draw=none] (node8) at (3.57,-2.12) {$T_j$};
+  \draw[arrows=-Latex] (2.4,-2.12) -- (node8.west);
+  \draw (node7.east) -- (4.34,-0.51) -- (4.34,-2.12) .. controls (4.18,-2.12) and (4.02,-2.12) .. (node8.east);
+  \node[draw=orange, fill=orange, rounded corners] (node9) at (5.96,-1.24) {Comparator};
+  \draw[arrows=-Latex] (4.34,-1.24) -- (node9.west);
+  \node[draw=none] (node10) at (-3,-2.15) {$T_0, T_1, ..., T_N$};
+  \node[draw=none] (node12) at (9.62,-1.24) {$T_0, T_1, ..., T_{N+1}$};
+  \draw[arrows=-Latex] (node10.east) -- (-0.63,-2.15);
+  \draw[arrows=-Latex] (node9.east) -- (8.4,-1.24);
+  \node[draw=none, node font=\scriptsize\itshape] at (7.65,-1.05) {Insertion};
+  \node[draw=none, node font=\scriptsize\itshape] at (7.65,-1.45) {$O(logN)$};
+  \node[draw=none] (node13) at (-3.22,-6.72) {$O_0$};
+  \node[draw=none] (node15) at (-3.21,-7.87) {$O_g$};
+  \node[draw=cyan, fill=cyan, rounded corners, align=center] (node14) at (-1.74,-6.72) {LeWM\\Enc};
+  \node[draw=cyan, fill=cyan, rounded corners, align=center] (node16) at (-1.74,-7.87) {LeWM\\Enc};
+  \draw[arrows=-Latex] (node13.east) -- (node14.west);
+  \draw[arrows=-Latex] (node15.east) -- (node16.west);
+  \node[draw=none] (node17) at (-0.32,-6.72) {$z_0$};
+  \node[draw=none] (node18) at (-0.33,-7.87) {$z_g$};
+  \draw[arrows=-Latex] (node14.east) -- (node17.west);
+  \draw[arrows=-Latex] (node16.east) -- (node18.west);
+  \node[draw=pink, align=center, minimum height=53pt, fill=pink, rounded corners] (node22) at (1,-7.3) {Latent\\Flow\\Planner};
+  \draw[arrows=-Latex] (node17.east) -- (0.29,-6.72);
+  \draw[arrows=-Latex] (node18.east) -- (0.29,-7.87);
+  \node[draw=lightgray, rounded corners, dashed, fill=black!5] at (1.46,-10.22) {$z_0\longrightarrow z_1\longrightarrow z_2 \longrightarrow \dots \longrightarrow z_g$};
+  \node[draw=lightgray, rounded corners, fill=black!5, dashed] at (1.37,-10.31) {$z_0\longrightarrow z_1\longrightarrow z_2 \longrightarrow \dots \longrightarrow z_g$};
+
+  \node[draw=lightgray, rounded corners, fill=white, dashed] (node27) at (1.25,-10.43) {$z_0\longrightarrow z_1\longrightarrow z_2 \longrightarrow \dots \longrightarrow z_g$};
+  \node[draw=lightgray, rounded corners, dashed, fill=black!5] at (4.51,-7.76) {$z_0\longrightarrow z_1 \longrightarrow \dots \longrightarrow z_g$};
+  \node[draw=lightgray, rounded corners, fill=black!5, dashed] at (4.42,-7.85) {$z_0\longrightarrow z_1 \longrightarrow \dots \longrightarrow z_g$};
+  \node[draw=lightgray, rounded corners, fill=white, dashed] (node25) at (4.3,-7.97) {$z_0\longrightarrow z_1\longrightarrow \dots \longrightarrow z_g$};
+
+  \node[draw=none, node font=\footnotesize\itshape] (node23) at (4.44,-7.26) {Latent Plan $\times$ N };
+  \node[draw=none, node font=\footnotesize\itshape] (node26) at (1.46,-9.63) {Top-k Latent Plan};
+  \node[draw=none, node font=\footnotesize\itshape, align=center] (node24) at (3.41,-6.16) {Experience\\Update};
+  \node[draw=none, node font=\footnotesize\itshape] at (1.37,-12.87) {LeWM};
+  \node[draw=pink, fill=pink, rounded corners] (node19) at (-0.3,-11.37) {Dec};
+
+  \draw (-0.71,-10.57) -- (-0.71,-10.77) -- (0.15,-10.77) -- (0.15,-10.55);
+  \draw[arrows=-Latex] (-0.3,-10.77) -- (node19.north);
+  \draw[arrows=-Latex] (node19.south) -- (-0.3,-11.92);
+  \node[draw=none, node font=\footnotesize] at (-0.29,-12.1) {$a_0$};
+  \node[draw=pink, fill=pink, rounded corners] (node20) at (0.75,-11.37) {Dec};
+  \draw (0.34,-10.57) -- (0.34,-10.77) -- (1.2,-10.77) -- (1.2,-10.55);
+  \draw[arrows=-Latex] (0.75,-10.77) -- (node20.north);
+  \draw[arrows=-Latex] (node20.south) -- (0.75,-11.92);
+  \node[draw=none, node font=\footnotesize] at (0.75,-12.1) {$a_1$};
+  \node[draw=none] at (1.72,-11.37) {...};
+  \node[draw=lightgray, text=black, rounded corners, dashed] at (1.25,-12.27) {$z_0\longrightarrow \hat{z_1}\longrightarrow \hat{z_2} \longrightarrow \dots \longrightarrow \hat{z_g}$};
+  \draw[arrows=-Latex] (node21.south) -- (node22.north);
+
+  \draw[lightgray, dashed, thick, rounded corners] (-3.78,-5.05) rectangle (6.54,-8.71);
+  \draw[arrows=Latex-Latex] (3.96,-10.43) .. controls (4.46,-10.88) and (4.46,-11.96) .. (3.96,-12.27);
+
+  \draw[arrows=-Latex] (node23.north) -- (4.44,-5.75) -- (node21-1-4.east);
+
+  \draw[arrows=-Latex] (node22.east) -- (2.08,-7.3) -- (2.08,-7.97) -- (node25.west);
+  \draw[arrows=-Latex] (4.45,-11.35) -- (4.76,-11.35);
+  \node[draw=none] at (6.56,-11.27) {$score^{(i)}=\|\hat{z_g}^{(i)}-z_g\|^2_2$};
+  \draw[arrows=-Latex] (8.45,-11.32) -- (8.76,-11.32);
+  \node[draw=none] at (9.77,-11.32) {$a_0, a_1, ..., a_g$};
+  \draw[arrows=-Latex] (1.47,-8.71) -- (node26.north);
+\end{tikzpicture}  En&  & $T_0$ & $T_1$ & $...$ & $T_n$ \\
+A & B & C & D \\ABCD
