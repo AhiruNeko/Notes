@@ -157,6 +157,25 @@ effective rank: 1.29
 
 expert-centered effective rank: 1.30
 
+### Experiences Influence
+
+**1. PCA**
+
+![](./real_experience_raw_latent_distribution_raw_latent_pca_by_task.png)
+
+**2. UMAP**
+
+![](./real_experience_raw_latent_distribution_task_centered_raw_latent_umap3d.png)
+
+| Memory | Round | Mean centroid shift | Within-path spread | Shift / spread |
+|---:|---:|---:|---:|---:|
+| 0 | 1 | 0.00 | 6.54 | 0.00 |
+| 4 | 2 | 5.51 | 6.32 | 0.87 |
+| 16 | 5 | 4.50 | 6.14 | 0.73 |
+| 64 | 17 | 5.79 | 6.54 | 0.89 |
+
+average cost: -0.3
+
 ### Future Improvements
 
 1. SIGReg for traj-enc
@@ -168,3 +187,5 @@ expert-centered effective rank: 1.30
 4. LTC comparison
 
 5. Real trajectory fine-tuning
+
+6. Initial random experiences
