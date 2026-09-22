@@ -36,7 +36,7 @@
 
 - max path length 21
 
-- input dim 384 ([$z_t, z_g - z_t$]), hidden 256
+- input dim 384 ([z_t, z_g - z_t]), hidden 256
 
 - goal condition: 192 -> 256 -> 256, SiLU, AdaLN
 

@@ -3,7 +3,7 @@
   \fill[cyan!86!lime!16] (-6,-1.22) rectangle (17.8,-8.1);
   \fill[green!95!red!12] (-6,-7.99) rectangle (17.81,-16.55);
   \fill[dashed, rounded corners, lightgray] (-5.51,4.28) rectangle (4.99,-0.36);
-  \node[draw, node font=\bfseries] at (-2.77,5) {Step 1 - Traj-Enc & Comparator};
+  \node[draw, node font=\bfseries] at (-2.76,5) {Step 1 - Traj-Enc & Cost Model};
   \node[draw, node font=\bfseries] at (-2.68,-1.95) {Step 2 - Lantent Flow Planner};
   \node[draw, node font=\bfseries] at (-3.6,-8.68) {Step 3 - Fine-Tuning};
   \node[draw=none, align=left, minimum width=84pt, rounded corners] at (-3.9,2.7) {$\tau^+=(z_0, z_g, \tau)$ \\ $\tau^-=(z_0,z_g',\tau)$};
@@ -45,14 +45,14 @@
   \draw[arrows=-Latex] (node8.east) -- (11.4,2.73);
   \draw[arrows=-Latex] (node33.east) -- (11.4,0.97);
   \draw[dashed] (-5.12,1.93) -- (4.63,1.93);
-  \node[draw=none] (node10) at (15.2,1.85) {$\mathcal{L}_{LTC}=\mathbb{E}[\log(1+e^{-\frac{c^--c^+}{\beta}})]$};
-  \node[draw=none] (node45) at (8.62,-13.27) {$\mathcal{L}_{LTC}=\mathbb{E}[\log(1+e^{-\frac{c^--c^+}{\beta}})]$};
+  \node[draw=none] (node10) at (15.2,1.85) {$\mathcal{L}_{LTC}^{}=\mathbb{E}[\log(1+e^{-\frac{c^--c^+}{\beta}})]$};
+  \node[draw=none] (node45) at (8.62,-13.27) {$\mathcal{L}_{LTC}^{}=\mathbb{E}[\log(1+e^{-\frac{c^--c^+}{\beta}})]$};
   \draw[arrows=Latex-] (node5.north) -- (7.33,4.05) -- (15.2,4.05) .. controls (15.2,3.37) and (15.2,2.88) .. (node10.north);
   \draw[arrows=Latex-] (node4.south) -- (7.33,-0.35) -- (15.2,-0.35) .. controls (15.2,0.15) and (15.2,0.73) .. (node10.south);
   \draw[arrows=-Latex] (10.32,4.05) -- (node8.north);
-  \node[draw=none] at (14.44,3.05) {$\nabla\mathcal{L}_{LTC}^{}$};
-  \node[draw=none] at (14.46,0.65) {$\nabla\mathcal{L}_{LTC}^{}$};
-  \node[draw=none] at (4.34,-7.55) {$\nabla\mathcal{L_planner}_{}$};
+  \node[draw=none] at (14.44,3.05) {$\nabla\mathcal{L}_{LTC}$};
+  \node[draw=none] at (14.46,0.65) {$\nabla\mathcal{L}_{LTC}$};
+  \node[draw=none] at (4.34,-7.55) {$\nabla\mathcal{L_planner}$};
   \node[draw=none] (node13) at (-4.5,-6.49) {$z_0, \epsilon_1, ..., z_g$};
   \node[draw=pink, fill=pink, rounded corners, minimum width=83pt] (node12) at (-1.56,-6.49) {Planner};
   \draw[arrows=-Latex] (node12.east) -- (0.33,-6.49);
@@ -66,8 +66,8 @@
   \node[draw=none] (node19) at (0.33,-2.75) {$\tau_i$};
   \draw[arrows=-Latex] (node16.east) -- (node19.west);
   \draw (node19.east) -- (6.12,-2.74) -- (6.14,-6.48) .. controls (6.07,-6.48) and (5.95,-6.48) .. (node15.east);
-  \node[draw=none] (node20) at (9.6,-4.6) {$\mathcal{L}_{planner}=\mathbb{E}[\|\hat{\tau_i}-\tau_i\|^2_2]$};
-  \node[draw=none] (node46) at (8.29,-14.65) {$\mathcal{L}_{planner}=\mathbb{E}[\|\hat{\tau_i}-\tau_i\|^2_2]$};
+  \node[draw=none] (node20) at (9.6,-4.6) {$\mathcal{L}_{planner}^{}=\mathbb{E}[\|\hat{\tau_i}-\tau_i\|^2_2]$};
+  \node[draw=none] (node46) at (8.29,-14.65) {$\mathcal{L}_{planner}^{}=\mathbb{E}[\|\hat{\tau_i}-\tau_i\|^2_2]$};
   \draw[arrows=-Latex] (6.13,-4.6) -- (node20.west);
   \draw[arrows=-Latex] (node20.south) -- (9.6,-7.26) -- (-1.56,-7.3) -- (node12.south);
   \matrix [matrix of nodes, fill=lime] (node21) at (-1.6,-5.49) {
