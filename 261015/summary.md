@@ -21,9 +21,9 @@
 
 **Overall:**
 
-- Original LeFlow: $83.6\%\pm4.6\%$, max $88\%$
+- Original LeFlow: 83.6% +/- 4.6%, max 88%
 
-- New LeFlow: $88.6\%\pm2.3\%$, max $94\%$
+- New LeFlow: 88.6% +/- 2.3%, max 94%
 
 | Metric | Original LeFlow | New LeFlow | Increase |
 |---|---:|---:|---:|
