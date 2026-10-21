@@ -1,6 +1,6 @@
 # My Technology Test / Replication Notes — Rehabilitation Posture Guidance
 
-## 1. MediaPipe Pose / BlazePose — **P1**
+## 1. MediaPipe Pose — **P1**
 
 `Camera → 33 landmarks → angles / alignment rules → feedback`
 
