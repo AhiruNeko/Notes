@@ -1,5 +1,25 @@
 ## 4 Tasks Evaluation
 
+### Paper results: Seeds={42, 43, 44, 45, 46}, horizon=receding horiaon=5, goal offset steps=25, budget=50
+
+| **Method** | tworooms | pusht | reacher | cube |
+|---|---:|---:|---:|---:|
+| CEM | 82.0 ± 2.0| 89.3 ± 6.4% | 68.0 ± 9.2% | 73.3 ± 9.0% |
+| iCEM | 88.0 ± 2.0% | 84.7 ± 3.1% | 67.3 ± 11.4% | 76.0 ± 7.2% |
+| MPPI | 71.3 ± 6.4% | 60.7 ± 4.2% | 42.7 ± 4.6% | 49.4 ± 9.5%|
+| LeFlow | 100.0 ± 0.00% | 95.2 ± 3.0% | 86.8 ± 4.8% | 100.0 ± 0.0% |
+
+### Seeds={42, 43, 44, 45, 46, 47, 48, 49, 50, 51}, horizon=receding horiaon=5, goal offset steps=25, budget=50
+
+| Tasks | LeFlow SR | new LeFlow SR | SR increase | LeFlow time | new LeFlow time | time reduced |
+|---|---:|---:|---:|---:|---:|---:|
+| PushT | 95.40 ± 2.99% | **96.80 ± 2.70%** | **+1.40 pp** | 23.704 ± 0.669 | 23.915 ± 1.826 | -0.89% |
+| TwoRooms | 99.60 ± 0.84% | **100.00 ± 0.00%** | **0.40 pp** | 17.941 ± 2.417 | 16.421 ± 2.808 | 8.47% |
+| Cube | 100.00 ± 0.00% | **100.00 ± 0.00%** | **0 pp** | 87.167 ± 2.309 | 83.466 ± 3.787 | 4.25% |
+| Reacher | 86.00 ± 4.42% | **87.40 ± 4.33%** | **+1.40 pp** | 42.552 ± 0.790 | 43.060 ± 1.382 | -1.19% |
+
+### Seeds={42, 43, 44, 45, 46, 47, 48, 49, 50, 51}, horizon=receding horiaon=10, goal offset steps=50, budget=100
+
 | Tasks | LeFlow SR | new LeFlow SR | SR increase | LeFlow time | new LeFlow time | time reduced |
 |---|---:|---:|---:|---:|---:|---:|
 | PushT | 82.60 ± 4.62% | **88.80 ± 4.13%** | **+6.20 pp** | 31.936 ± 0.821 | 30.724 ± 0.813 | 3.80% |
